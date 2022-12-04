@@ -32,6 +32,7 @@
             this.txtDisplay = new System.Windows.Forms.TextBox();
             this.btnDec = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnDivide = new System.Windows.Forms.Button();
             this.btnMultiply = new System.Windows.Forms.Button();
             this.btnSubtract = new System.Windows.Forms.Button();
@@ -48,7 +49,7 @@
             this.btnEquals = new System.Windows.Forms.Button();
             this.btn0 = new System.Windows.Forms.Button();
             this.btn9 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtPreview = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +57,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.txtPreview);
             this.panel1.Controls.Add(this.txtDisplay);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -125,6 +127,24 @@
             this.panel2.Size = new System.Drawing.Size(363, 332);
             this.panel2.TabIndex = 4;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(85, 1);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 66);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "CE";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnDivide
             // 
             this.btnDivide.BackColor = System.Drawing.Color.Transparent;
@@ -175,7 +195,7 @@
             this.btnSubtract.Name = "btnSubtract";
             this.btnSubtract.Size = new System.Drawing.Size(112, 66);
             this.btnSubtract.TabIndex = 22;
-            this.btnSubtract.Text = "–";
+            this.btnSubtract.Text = "-";
             this.btnSubtract.UseVisualStyleBackColor = false;
             this.btnSubtract.Click += new System.EventHandler(this.operation_click);
             // 
@@ -413,23 +433,20 @@
             this.btn9.UseVisualStyleBackColor = false;
             this.btn9.Click += new System.EventHandler(this.button_click);
             // 
-            // button1
+            // txtPreview
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(85, 1);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 66);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "CE";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.txtPreview.BackColor = System.Drawing.Color.Black;
+            this.txtPreview.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPreview.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtPreview.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPreview.ForeColor = System.Drawing.Color.White;
+            this.txtPreview.Location = new System.Drawing.Point(19, 4);
+            this.txtPreview.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPreview.Name = "txtPreview";
+            this.txtPreview.ReadOnly = true;
+            this.txtPreview.Size = new System.Drawing.Size(331, 80);
+            this.txtPreview.TabIndex = 1;
+            this.txtPreview.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Form1
             // 
@@ -471,6 +488,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtDisplay;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtPreview;
     }
 }
 

@@ -13,8 +13,8 @@ namespace FinalProjectOOP_Calculator
     public partial class Form1 : Form
     {
         Double resultNum = 0;
-        String operationPerformed = "";
-        bool isOperationPerformed = false;
+        String operationDone = "";
+        bool OperationDone = false;
 
         public Form1()
         {
@@ -25,44 +25,53 @@ namespace FinalProjectOOP_Calculator
 
         private void button_click(object sender, EventArgs e)
         {
-            if( txtDisplay.Text == "0" || (isOperationPerformed))
+            
+
+            Button number = (Button)sender;
+
+            if (txtDisplay.Text == "0" || OperationDone)
             {
                 txtDisplay.Clear();
             }
-            isOperationPerformed = false;
-            Button button = (Button)sender;
-            if (button.Text == ".")
+            OperationDone = false;
+            if (number.Text == ".")
             {
-                if (!txtDisplay.Text.Contains("."))
+                if (txtDisplay.Text.Contains(".") == false)
                 {
-                    txtDisplay.Text = txtDisplay.Text + button.Text;
+                    txtDisplay.Text += ".";
+                    txtPreview.Text = txtDisplay.Text;
                 }
             }
             else
             {
-                txtDisplay.Text += button.Text;
+                txtDisplay.Text += number.Text;
+                txtPreview.Text = txtDisplay.Text;
             }
 
+                
+
+            
         }
 
         private void operation_click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-            if(resultNum != 0)
+            Button operation = (Button)sender;
+            txtPreview.Text += operation.Text;
+            if (resultNum != 0)
             {
                 btnEquals.PerformClick();
-                operationPerformed = button.Text;
+                operationDone = operation.Text;
                 resultNum = Double.Parse(txtDisplay.Text);
-                isOperationPerformed = true;
+                OperationDone = true;
             }
             else
             {
-                operationPerformed = button.Text;
+                operationDone = operation.Text;
                 resultNum = Double.Parse(txtDisplay.Text);
-                isOperationPerformed = true; 
+                OperationDone = true;
             }
 
-            
+
 
 
         }
@@ -75,13 +84,15 @@ namespace FinalProjectOOP_Calculator
         private void btnC_Click(object sender, EventArgs e)
         {
             txtDisplay.Text = "0";
+            txtPreview.Text = "";
             resultNum = 0;
 
         }
 
         private void btnEquals_Click(object sender, EventArgs e)
         {
-            switch (operationPerformed)
+            txtPreview.Clear();
+            switch (operationDone)
             {
                 case "+":
                     txtDisplay.Text = (resultNum + Double.Parse(txtDisplay.Text)).ToString();
@@ -97,8 +108,6 @@ namespace FinalProjectOOP_Calculator
                     break;
                 default:
                     break;
-
-
             }
             resultNum = Double.Parse(txtDisplay.Text);
 
