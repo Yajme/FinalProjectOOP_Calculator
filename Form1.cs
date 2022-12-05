@@ -28,7 +28,12 @@ namespace FinalProjectOOP_Calculator
             
 
             Button number = (Button)sender;
-
+            if (txtPreview.Text.Contains("="))
+            {
+                txtPreview.Clear();
+                txtDisplay.Clear();
+                resultNum = 0;
+            }
             if (txtDisplay.Text == "0" || OperationDone)
             {
                 txtDisplay.Clear();
@@ -39,13 +44,13 @@ namespace FinalProjectOOP_Calculator
                 if (txtDisplay.Text.Contains(".") == false)
                 {
                     txtDisplay.Text += ".";
-                    txtPreview.Text = txtDisplay.Text;
+                    
                 }
             }
             else
             {
                 txtDisplay.Text += number.Text;
-                txtPreview.Text = txtDisplay.Text;
+                
             }
 
                 
@@ -56,6 +61,7 @@ namespace FinalProjectOOP_Calculator
         private void operation_click(object sender, EventArgs e)
         {
             Button operation = (Button)sender;
+            txtPreview.Text = txtDisplay.Text;
             txtPreview.Text += operation.Text;
             if (resultNum != 0)
             {
@@ -91,7 +97,8 @@ namespace FinalProjectOOP_Calculator
 
         private void btnEquals_Click(object sender, EventArgs e)
         {
-            txtPreview.Clear();
+            
+            txtPreview.Text += txtDisplay.Text + "=";
             switch (operationDone)
             {
                 case "+":

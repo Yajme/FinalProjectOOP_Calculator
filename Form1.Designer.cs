@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtPreview = new System.Windows.Forms.TextBox();
             this.txtDisplay = new System.Windows.Forms.TextBox();
             this.btnDec = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -49,7 +51,6 @@
             this.btnEquals = new System.Windows.Forms.Button();
             this.btn0 = new System.Windows.Forms.Button();
             this.btn9 = new System.Windows.Forms.Button();
-            this.txtPreview = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(363, 156);
             this.panel1.TabIndex = 1;
+            // 
+            // txtPreview
+            // 
+            this.txtPreview.BackColor = System.Drawing.Color.Black;
+            this.txtPreview.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPreview.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtPreview.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPreview.ForeColor = System.Drawing.Color.White;
+            this.txtPreview.Location = new System.Drawing.Point(19, 4);
+            this.txtPreview.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPreview.Name = "txtPreview";
+            this.txtPreview.ReadOnly = true;
+            this.txtPreview.Size = new System.Drawing.Size(331, 80);
+            this.txtPreview.TabIndex = 1;
+            this.txtPreview.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtDisplay
             // 
@@ -433,21 +449,6 @@
             this.btn9.UseVisualStyleBackColor = false;
             this.btn9.Click += new System.EventHandler(this.button_click);
             // 
-            // txtPreview
-            // 
-            this.txtPreview.BackColor = System.Drawing.Color.Black;
-            this.txtPreview.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPreview.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtPreview.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPreview.ForeColor = System.Drawing.Color.White;
-            this.txtPreview.Location = new System.Drawing.Point(19, 4);
-            this.txtPreview.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPreview.Name = "txtPreview";
-            this.txtPreview.ReadOnly = true;
-            this.txtPreview.Size = new System.Drawing.Size(331, 80);
-            this.txtPreview.TabIndex = 1;
-            this.txtPreview.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -456,6 +457,7 @@
             this.ClientSize = new System.Drawing.Size(363, 489);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Calculator";
